@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contacto - Café Wilmer</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #fff; }
+    header { background: #2c3e50; color: white; padding: 20px; text-align: center; }
+    nav { background: #34495e; padding: 10px; text-align: center; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    nav a:hover { color: #e67e22; }
+    section { text-align: center; padding: 40px; }
+    form { max-width: 400px; margin: 0 auto; text-align: left; }
+    label { display: block; margin-top: 15px; font-weight: bold; }
+    input, textarea { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; }
+    button { margin-top: 20px; background: #e67e22; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #d35400; }
+    .success-message { margin-top: 20px; color: green; font-weight: bold; display: none; }
+    iframe { margin-top: 30px; border: 0; border-radius: 10px; }
+    footer { background:#2c3e50; color:white; text-align:center; padding:20px; margin-top:40px; }
+    footer a { color:#e67e22; text-decoration:none; margin:0 10px; }
+    footer a:hover { text-decoration:underline; }
+    @media (max-width:600px) {
+      form { width: 90%; }
+      iframe { width: 90%; height: 250px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Contacto</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="menu.html">Menú</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+
+  <section>
+    <h2>Envíanos un mensaje</h2>
+    <form id="contact-form" action="https://formspree.io/f/mykvyyjv" method="POST">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="_replyto" required>
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+    <p class="success-message" id="success">✔ ¡Gracias, tu mensaje fue enviado!</p>
+
+    <!-- Mapa de ubicación -->
+    <h2>Encuéntranos aquí</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.123456789!2d-73.123456!3d10.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e5a123456789abc%3A0x123456789abcdef!2sSan%20Francisco%2C%20Cesar!5e0!3m2!1ses!2sco!4v1710000000000" width="400" height="300" allowfullscreen></iframe>
+  </section>
+
+  <footer>
+    <p>📍 Dirección: Calle 10 #5-23, San Francisco, Cesar</p>
+    <p>⏰ Horario: Lunes a Sábado 8:00 AM - 8:00 PM</p>
+    <p>
+      Síguenos:
+      <a href="https://instagram.com/tucuenta">Instagram</a> |
+      <a href="https://facebook.com/tucuenta">Facebook</a> |
+      <a href="https://wa.me/573005121537">WhatsApp</a>
+    </p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const success = document.getElementById('success');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        success.style.display = 'block';
+        form.reset();
+      } else {
+        alert("Hubo un error al enviar tu mensaje. Intenta de nuevo.");
+      }
+    });
+  </script>
+</body>
+</html>

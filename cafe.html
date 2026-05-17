@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Café Wilmer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background: #34495e;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #e67e22;
+    }
+
+    .hero {
+      background-color: #e67e22;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background: white;
+      color: #e67e22;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #f9f9f9;
+    }
+
+    #menu {
+      text-align: center;
+      padding: 40px;
+      background-color: #f8f8f8;
+    }
+
+    #menu h2 {
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    .menu-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .menu-item {
+      width: 200px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .menu-item:hover {
+      transform: scale(1.05);
+    }
+
+    .menu-item img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .menu-item p {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    #contacto {
+      text-align: center;
+      padding: 40px;
+      background-color: #fff;
+    }
+
+    #contacto h2 {
+      color: #2c3e50;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Café Wilmer</h1>
+    <p>El mejor café artesanal de Colombia</p>
+  </header>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#menu">Menú</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section class="hero" id="inicio">
+    <h1>Bienvenido a Café Wilmer</h1>
+    <p>Disfruta de una experiencia única con nuestro café artesanal.</p>
+    <a href="#menu" class="btn">Ver Menú</a>
+  </section>
+
+  <section id="menu">
+    <h2>Menú</h2>
+    <div class="menu-container">
+      <div class="menu-item">
+        <img src="espresso.png" alt="Café espresso">
+        <p>Café espresso</p>
+      </div>
+      <div class="menu-item">
+        <img src="capuchino.png" alt="Capuchino">
+        <p>Capuchino</p>
+      </div>
+      <div class="menu-item">
+        <img src="latte.png" alt="Latte">
+        <p>Latte</p>
+      </div>
+      <div class="menu-item">
+        <img src="postre.png" alt="Postres artesanales">
+        <p>Postres artesanales</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Teléfono: +57 300 512 1537</p>
+    <p>Email: WilmerMurciaBeru@gmail.com</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Café Wilmer - Todos los derechos reservados</p>
+  </footer>
+</body>
+</html>
